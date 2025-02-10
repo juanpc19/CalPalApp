@@ -1,5 +1,6 @@
 package com.example.calpalapp.presentation.accesousuario.iniciosesion
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -114,9 +115,7 @@ fun InicioSesion(navController: NavController) {
     }
 }
 
-@Preview(showBackground = true
-    //, uiMode = Configuration.UI_MODE_NIGHT_YES
-    )
+@Preview(showBackground = true)
 @Composable
 fun InicioSesionPreview() {
     CalPalAppTheme {

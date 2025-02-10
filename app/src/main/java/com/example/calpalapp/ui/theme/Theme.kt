@@ -9,35 +9,72 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
+//negro verde gris
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = marronIntenso40,
+    onPrimary = blanco,
+    secondary = blanco,
+    onSecondary = Color.Yellow,
+    tertiary = blanco,
+    onTertiary = Color.Yellow,
+    background = gris20,
+    onBackground = blanco,
+    surface = negro,
+    onSurface = blanco,
+    primaryContainer = marronIntenso40,
+    onPrimaryContainer = blanco,
+    secondaryContainer = Color.Yellow,
+    onSecondaryContainer = Color.Yellow,
+    tertiaryContainer = Color.Yellow,
+    onTertiaryContainer = Color.Yellow,
+    surfaceVariant = grisMarron20,
+    onSurfaceVariant = blanco,
+    outline = marronIntenso40
 )
 
+//blanco azul marron gris
+//gris claro, gris oscuro, verde, marron, marron claro
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
+    primary = Color.Yellow,
+    secondary = blanco,
+    tertiary = blanco,
+    background = Color.Gray,
+    surface = Color.Gray,
+    onPrimary = blanco,
     onSecondary = Color.White,
     onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    onBackground = Color.White,
+    onSurface = Color.White,
+    primaryContainer = Color.White,
+    onPrimaryContainer = Color.Gray,
+//    secondaryContainer = Color.Yellow,
+//    onSecondaryContainer = Color.Yellow,
+//    tertiaryContainer = Color.Yellow,
+//    onTertiaryContainer = Color.Yellow,
+    surfaceVariant = Color.Green,
+    onSurfaceVariant = Color.Yellow,
+    outline = Color.Blue
 )
+
+//primary borde superior app, fondo switch activo y boton sign in
+//on primary circulo switch activo
+//surface barra top y bot de scaffold y fondo de modal carga y otros modales
+//-secondary no se
+//-terciary no se
+//background fondo general y boton despliegue info
+//primaryContainer y OnprimaryContainer boton flotante de scaffold
+//surfaceVariant para fondo de switch inactivo y fondo de item de card de info
+//onSurfaceVariant para iconos custom y texto modal y AMBOS textos de card de info
+//outline borde switch inactivo y icono desplegar card info
 
 @Composable
 fun CalPalAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
