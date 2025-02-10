@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    //kotlin("kapt")//Habilita la herramienta para procesar anotaciones en Kotlin.
+    //id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -56,4 +58,26 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Uso de ViewModel y ciclo de vida en Compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    //para comprobar leaks de memoria en ejecucion
+    debugImplementation(libs.leakcanary.android)
+
+    //para serializar y deserializar datos en formato JSON en Kotlin
+    implementation(libs.kotlinx.serialization.json)
+
+    // Navegación en Compose
+    implementation(libs.androidx.navigation.compose)
+
+    // Carga de imágenes asíncronas
+    implementation(libs.coil.compose)
+
+    // Inyección de dependencias con Dagger Hilt
+    implementation(libs.hilt.android)
+
+    implementation (libs.androidx.material.icons.extended)
+
+    //kapt(libs.hilt.android.compiler)
 }

@@ -3,4 +3,7 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
+    //para inyeccion de dependencias con dagger hilt
+    //id("com.google.dagger.hilt.android") version "2.51.1" apply false
+    //kotlin("plugin.serialization") version "1.9.10"
 }
