@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlinxSerialization)
     //kotlin("kapt")//Habilita la herramienta para procesar anotaciones en Kotlin.
     //id("com.google.dagger.hilt.android")
 }

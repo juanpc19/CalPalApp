@@ -1,5 +1,6 @@
 package com.example.calpalapp.presentation.accesousuario.cambiocontrasena
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,8 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -32,8 +31,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -42,17 +39,14 @@ import com.example.calpalapp.ui.theme.CalPalAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CambioContrasena(navController: NavController) {
+fun PedirCambioContrasena(navController: NavController) {
 
-    var mostrarPass by remember { mutableStateOf(false) }
-    mostrarPass = false
-    var pass by remember { mutableStateOf("ejemplo123") }
-    var passconfirmada by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Cambio de Contraseña") },
+                title = { Text("Solicitar cambio de Contraseña") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary,
@@ -67,7 +61,6 @@ fun CambioContrasena(navController: NavController) {
                 }
             )
         },
-
         content = { paddingValues ->
             Column(
                 modifier = Modifier
@@ -79,8 +72,9 @@ fun CambioContrasena(navController: NavController) {
             ) {
                 Box(
                     modifier = Modifier
-                        .fillMaxHeight(0.5f)
+                        .fillMaxHeight(0.4f)
                         .fillMaxWidth(0.9f)
+                        .background(Color.White, shape = RoundedCornerShape(16.dp))
                         .border(1.dp, Color.Black, shape = RoundedCornerShape(16.dp))
                         .padding(16.dp)
                 ) {
@@ -93,47 +87,20 @@ fun CambioContrasena(navController: NavController) {
                             horizontalArrangement = Arrangement.Center
                         ) {
                             Text(
-                                text = "Establece tu nueva contraseña. Asegúrate de que contenga entre X y X caracteres," +
-                                        " al menos un carácter especial, una mayúscula y una minúscula.",
+                                text = "¿Has olvidado tu contraseña o quieres cambiarla? " +
+                                        "Introduce tu email y recibirás un correo para el cambio de contraseña.",
                                 modifier = Modifier.padding(8.dp)
                             )
                         }
                         Row(
-                            modifier = Modifier.padding(5.dp)
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.Center
                         ) {
-                            TextField(value = pass,
-                                onValueChange = {},
-                                label = { Text("Contraseña") },
-                                visualTransformation = if (mostrarPass) VisualTransformation.None else PasswordVisualTransformation(),
-                                trailingIcon = {
-                                    val icon =
-                                        if (mostrarPass) Icons.Default.VisibilityOff else Icons.Default.Visibility
-                                    IconButton(onClick = { mostrarPass = !mostrarPass }) {
-                                        Icon(
-                                            imageVector = icon,
-                                            contentDescription = "Mostrar/ocultar contraseña"
-                                        )
-                                    }
-                                }
-                            )
-                        }
-                        Row(
-                            modifier = Modifier.padding(5.dp)
-                        ) {
-                            TextField(value = pass,
-                                onValueChange = {},
-                                label = { Text("Confirmar contraseña") },
-                                visualTransformation = if (mostrarPass) VisualTransformation.None else PasswordVisualTransformation(),
-                                trailingIcon = {
-                                    val icon =
-                                        if (mostrarPass) Icons.Default.VisibilityOff else Icons.Default.Visibility
-                                    IconButton(onClick = { mostrarPass = !mostrarPass }) {
-                                        Icon(
-                                            imageVector = icon,
-                                            contentDescription = "Mostrar/ocultar contraseña"
-                                        )
-                                    }
-                                }
+                            TextField(
+                                value = email,
+                                onValueChange = { email = it },
+                                label = { Text("Email") },
+                                modifier = Modifier.fillMaxWidth()
                             )
                         }
                         Row(
@@ -141,7 +108,7 @@ fun CambioContrasena(navController: NavController) {
                             horizontalArrangement = Arrangement.Center
                         ) {
                             Button(onClick = { }) {
-                                Text(text = "Cambiar contraseña")
+                                Text(text = "Solicitar correo")
                             }
                         }
                     }
@@ -151,11 +118,12 @@ fun CambioContrasena(navController: NavController) {
     )
 }
 
+
 @Preview(showBackground = true)
 @Composable
-fun CambioContrasenaPreview() {
+fun PedirCambioContrasenaPreview() {
     CalPalAppTheme {
         val navController = rememberNavController()
-        CambioContrasena(navController)
+        PedirCambioContrasena(navController)
     }
 }
