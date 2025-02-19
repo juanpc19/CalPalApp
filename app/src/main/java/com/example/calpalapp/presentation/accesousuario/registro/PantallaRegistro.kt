@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.calpalapp.R
-import com.example.calpalapp.core.navigation.PantallaInicioSesion
+import com.example.calpalapp.presentation.utils.navigation.PantallaInicioSesion
 import com.example.calpalapp.ui.theme.CalPalAppTheme
 
 @Composable

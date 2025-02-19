@@ -1,4 +1,4 @@
-package com.example.calpalapp.presentation.componentes
+package com.example.calpalapp.presentation.utils.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.material.icons.Icons
@@ -15,11 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.calpalapp.core.navigation.PantallaAlimentos
-import com.example.calpalapp.core.navigation.PantallaCalculadora
-import com.example.calpalapp.core.navigation.PantallaHistorialRegistros
-import com.example.calpalapp.core.navigation.PantallaPerfil
-import com.example.calpalapp.core.navigation.PantallaRegistroDiario
+import com.example.calpalapp.presentation.utils.navigation.PantallaAlimentos
+import com.example.calpalapp.presentation.utils.navigation.PantallaCalculadora
+import com.example.calpalapp.presentation.utils.navigation.PantallaHistorialRegistros
+import com.example.calpalapp.presentation.utils.navigation.PantallaPerfil
+import com.example.calpalapp.presentation.utils.navigation.PantallaRegistroDiario
 import com.example.calpalapp.ui.theme.CalPalAppTheme
 
 //Barra inferior de navegacion, contiene iconos con clickeables que haran navegacion

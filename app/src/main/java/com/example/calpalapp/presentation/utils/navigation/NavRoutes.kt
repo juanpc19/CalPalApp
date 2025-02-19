@@ -1,4 +1,4 @@
-package com.example.calpalapp.core.navigation
+package com.example.calpalapp.presentation.utils.navigation
 
 import kotlinx.serialization.Serializable
 

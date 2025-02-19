@@ -48,9 +48,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.calpalapp.R
-import com.example.calpalapp.core.navigation.PantallaDetallesAlimento
-import com.example.calpalapp.presentation.componentes.BottomBar
-import com.example.calpalapp.presentation.componentes.SearchBar
+import com.example.calpalapp.presentation.utils.navigation.PantallaDetallesAlimento
+import com.example.calpalapp.presentation.utils.components.BottomBar
+import com.example.calpalapp.presentation.utils.components.SearchBar
 import com.example.calpalapp.ui.theme.CalPalAppTheme
 
 
